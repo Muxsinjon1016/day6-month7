@@ -52,6 +52,9 @@ export const Products = ({ id, img, name, price, discountPrice, category }) => {
               className="w-10 hover:scale-[1.2] transition duration-300 cursor-pointer ml-auto h-auto"
             />
           </div>
+          {/*  bazida bitta productni ikki marta qo'shgandek ko'rinishi mumkin
+          lekin ular bitta emas, id nanoid bilan harxil bo'lgani uchun qo'shadi
+          lekin datalarini va imglarini bir xil berganman */}
         </div>
       </div>
     </>
