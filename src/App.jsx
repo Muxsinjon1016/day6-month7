@@ -1,36 +1,19 @@
-import { products } from "./data/data";
-import { Card } from "./components/card";
-import { Header } from "./components/header";
-import { useSelector } from "react-redux";
-import { Card2 } from "./components/cart";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Header from "./layout/header";
+import NotFound from "./layout/notFound";
+import Home from "./pages/home";
+import Cart from "./pages/cart";
 
 function App() {
-  const { productList } = useSelector((state) => state.product);
   return (
     <>
-      <div style={{ margin: "0 auto", width: "1200px" }}>
-        <Header />
-        <div style={{ display: "flex" }}>
-          <div style={{ display: "flex", width: "100%", flexWrap: "wrap" }}>
-            {products.map((item) => (
-              <Card key={item.id} {...item} />
-            ))}
-          </div>
-          <div
-            style={{
-              border: "1px solid red",
-              height: "100vh",
-              width: "500px",
-              overflowY: "scroll",
-              padding: "20px",
-            }}
-          >
-            {productList.map((item) => (
-              <Card2 key={item.id} {...item} />
-            ))}
-          </div>
-        </div>
-      </div>  
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }

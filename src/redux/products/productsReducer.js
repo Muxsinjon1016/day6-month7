@@ -11,7 +11,7 @@ const productReducer = createSlice({
   name: "products",
   initialState,
   reducers: {
-    addProduct: (state, action) => {
+    addToCart: (state, action) => {
       const item = state.productList.find(
         (product) => product.id == action.payload.id
       );
@@ -65,7 +65,7 @@ const productReducer = createSlice({
       };
     },
 
-    removeProduct: (state, action) => {
+    removeFromCart: (state, action) => {
       return {
         ...state,
         totalCount: state.totalCount - 1,
@@ -79,5 +79,5 @@ const productReducer = createSlice({
 
 export default productReducer.reducer;
 
-export const { addProduct, toggleAmount, removeProduct } =
+export const { addToCart, toggleAmount, removeFromCart } =
   productReducer.actions;
