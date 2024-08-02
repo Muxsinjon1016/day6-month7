@@ -33,11 +33,11 @@ export const Cart = () => {
             <div>
               <h1>{item.name}</h1>
               <b className="mt-4 mb-4">{item.userPrice} sum</b>
-              <p>Available: {item.count}</p>
+              <p>{item.count}</p>
               <button onClick={() => changeProductPrice(item.id, "add")}>
                 +
               </button>
-              <strong>{item.userCount}</strong>
+              <b>{item.userCount}</b>
               {item.userCount > 1 ? (
                 <button onClick={() => changeProductPrice(item.id, "remove")}>
                   -
