@@ -7,6 +7,7 @@ export const Cart = ({ img, name, price, discountPrice, id, category }) => {
       <h3>{name}</h3>
       <p>{price}</p>
       <p>{discountPrice}</p>
+      <h1>Muxsinjon</h1>
     </div>
   );
 };
